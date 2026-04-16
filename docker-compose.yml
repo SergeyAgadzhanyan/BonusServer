@@ -1,0 +1,34 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: bonus-postgres
+    environment:
+      POSTGRES_DB: bonus_db
+      POSTGRES_USER: bonus_user
+      POSTGRES_PASSWORD: bonus_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - bonus-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bonus_user -d bonus_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  bonus-server:
+    build: .
+    container_name: bonus-server
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/bonus_db
+      SPRING_DATASOURCE_USERNAME: bonus_user
+      SPRING_DATASOURCE_PASSWORD: bonus_password
+      SERVER_PORT: 8080
+    ports:
+      - "8080:8080"
+
+volumes:
+  bonus-postgres-data:
