@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-indexes-for-selects
+      author: S.Agadzhanyan
+      changes:
+        - createIndex:
+            tableName: bonus_operations
+            indexName: idx_bonus_operations_card_number_created_at
+            columns:
+              - column:
+                  name: card_number
+              - column:
+                  name: created_at
+
+        - createIndex:
+            tableName: bonus_operations
+            indexName: idx_bonus_operations_source_operation_id
+            columns:
+              - column:
+                  name: source_operation_id
