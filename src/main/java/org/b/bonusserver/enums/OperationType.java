@@ -1,4 +1,4 @@
-package org.b.bonusserver.entity;
+package org.b.bonusserver.enums;
 
 public enum OperationType {
     ACCRUAL,

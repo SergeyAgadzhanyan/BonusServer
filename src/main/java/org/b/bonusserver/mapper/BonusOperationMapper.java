@@ -2,7 +2,7 @@ package org.b.bonusserver.mapper;
 
 import org.b.bonusserver.dto.OperationResponse;
 import org.b.bonusserver.entity.BonusOperation;
-import org.b.bonusserver.entity.OperationType;
+import org.b.bonusserver.enums.OperationType;
 
 import java.time.OffsetDateTime;
 

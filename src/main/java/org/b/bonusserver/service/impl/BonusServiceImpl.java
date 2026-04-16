@@ -6,7 +6,7 @@ import org.b.bonusserver.dto.OperationResponse;
 import org.b.bonusserver.dto.ReversalRequest;
 import org.b.bonusserver.entity.BonusOperation;
 import org.b.bonusserver.entity.CardAccount;
-import org.b.bonusserver.entity.OperationType;
+import org.b.bonusserver.enums.OperationType;
 import org.b.bonusserver.exception.BusinessException;
 import org.b.bonusserver.exception.ResourceNotFoundException;
 import org.b.bonusserver.mapper.BonusOperationMapper;

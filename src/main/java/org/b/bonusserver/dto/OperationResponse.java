@@ -2,7 +2,7 @@ package org.b.bonusserver.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.b.bonusserver.entity.OperationType;
+import org.b.bonusserver.enums.OperationType;
 
 import java.time.OffsetDateTime;
 
